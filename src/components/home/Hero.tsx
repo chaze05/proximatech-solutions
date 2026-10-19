@@ -1,29 +1,28 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { SITE } from "@/data/site";
+import { HeroSlider } from "./HeroSlider";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100svh-76px)] items-center overflow-hidden border-b border-white/5">
-      <div aria-hidden="true" className="circuit-bg absolute inset-0" />
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 top-0 h-[460px] w-[460px] rounded-full bg-signal/20 blur-[130px] motion-safe:animate-float"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-32 bottom-0 h-[520px] w-[520px] rounded-full bg-[#7f1d1d]/30 blur-[140px] motion-safe:animate-float-slow"
-      />
-
-      <div className="relative mx-auto grid w-full max-w-container items-center gap-16 px-5 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
-        <div>
+    <HeroSlider>
+      <div className="relative z-10 mx-auto w-full max-w-container px-5 py-24 sm:py-28">
+        <div className="max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-signal-light">
             Proximatech Solutions
           </p>
           <h1 className="mt-6 font-display text-[clamp(2.9rem,8vw,6rem)] uppercase leading-[0.98]">
-            Securing Your
+            <span className="hero-word" style={{ animationDelay: "80ms" }}>
+              Securing
+            </span>{" "}
+            <span className="hero-word" style={{ animationDelay: "200ms" }}>
+              Your
+            </span>
             <br />
-            <span className="text-signal-light">Future.</span>
+            <span className="text-signal-light">
+              <span className="hero-word" style={{ animationDelay: "340ms" }}>
+                Future.
+              </span>
+            </span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
             {SITE.description}
@@ -42,38 +41,12 @@ export function Hero() {
             Serving enterprises across the Philippines
           </div>
         </div>
-
-        <div className="relative hidden lg:block" aria-hidden="true">
-          <div className="absolute inset-0 -z-10 rounded-full bg-signal/10 blur-[100px]" />
-          <div className="relative ml-auto w-[340px] rotate-2 overflow-hidden rounded-3xl border border-white/10 bg-panel p-3 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.9)]">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-elevated">
-              <Image
-                src="/images/products/product-1.avif"
-                alt=""
-                fill
-                sizes="340px"
-                className="object-contain p-6"
-              />
-            </div>
-          </div>
-          <div className="absolute -bottom-10 -left-10 w-[260px] -rotate-3 overflow-hidden rounded-3xl border border-white/10 bg-panel p-3 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.9)]">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-elevated">
-              <Image
-                src="/images/products/product-5.avif"
-                alt=""
-                fill
-                sizes="260px"
-                className="object-contain p-5"
-              />
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[9px] font-bold uppercase tracking-[0.4em] text-muted sm:flex">
+      <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-[9px] font-bold uppercase tracking-[0.4em] text-muted sm:flex">
         Scroll
         <span className="h-10 w-px bg-gradient-to-b from-signal/80 to-transparent" />
       </div>
-    </section>
+    </HeroSlider>
   );
 }

@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartProvider } from "@/components/store/CartProvider";
 import { CartDrawerMount } from "@/components/store/CartDrawerMount";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const archivo = Archivo_Black({
@@ -61,6 +62,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <CartDrawerMount />
+          <CustomCursor />
         </CartProvider>
       </body>
     </html>
