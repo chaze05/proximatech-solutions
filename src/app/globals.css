@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-ink font-body antialiased;
+  }
+
+  ::selection {
+    background: rgba(225, 29, 46, 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid #e11d2e;
+    outline-offset: 3px;
+  }
+}

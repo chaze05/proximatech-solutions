@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+qa/
+.superpowers/
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
+.env*.local
+.vercel
