@@ -17,7 +17,7 @@ export function MapCard() {
       />
 
       <div className="relative flex min-h-[220px] flex-col items-center justify-center p-6 text-center">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-signal/30 bg-night/70 text-signal">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-signal/30 bg-night/70 text-signal-light">
           <svg
             viewBox="0 0 24 24"
             width="20"

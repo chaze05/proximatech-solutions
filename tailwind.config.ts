@@ -17,6 +17,7 @@ const config: Config = {
         secondary: "#AEB7C6",
         muted: "#77808F",
         signal: "#E11D2E",
+        "signal-light": "#FF6B72",
         "signal-hover": "#FF3B4E",
         "signal-deep": "#A3121F",
         success: "#34D399",

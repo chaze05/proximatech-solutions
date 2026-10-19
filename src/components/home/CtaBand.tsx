@@ -16,11 +16,11 @@ export function CtaBand() {
               aria-hidden="true"
               className="absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-[#7f1d1d]/40 blur-[110px]"
             />
-            <p className="relative text-[11px] font-bold uppercase tracking-[0.32em] text-signal">
+            <p className="relative text-[11px] font-bold uppercase tracking-[0.32em] text-signal-light">
               Let&apos;s talk
             </p>
             <h2 className="relative mt-5 font-display text-3xl uppercase leading-[1.05] sm:text-5xl">
-              Let&apos;s build something <span className="text-signal">great</span> together.
+              Let&apos;s build something <span className="text-signal-light">great</span> together.
             </h2>
             <p className="relative mx-auto mt-5 max-w-xl text-secondary">
               Tell us about your operations and we&apos;ll map the right hardware,

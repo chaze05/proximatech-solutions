@@ -10,14 +10,14 @@ const archivo = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-display",
-  display: "swap",
+  display: "optional",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body",
-  display: "swap",
+  display: "optional",
 });
 
 export const metadata: Metadata = {

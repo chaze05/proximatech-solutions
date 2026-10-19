@@ -10,11 +10,11 @@ export default function NotFound() {
       />
 
       <div className="relative mx-auto w-full max-w-container px-5 py-24 text-center">
-        <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-signal">
+        <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-signal-light">
           404 — Page not found
         </p>
         <h1 className="mt-4 font-display text-5xl uppercase leading-[1] sm:text-7xl">
-          Signal <span className="text-signal">lost.</span>
+          Signal <span className="text-signal-light">lost.</span>
         </h1>
         <p className="mx-auto mt-5 max-w-md text-secondary">
           The page you&apos;re looking for has moved or never existed. Let&apos;s

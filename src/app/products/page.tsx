@@ -15,7 +15,7 @@ export default function ProductsPage() {
         eyebrow="Products"
         title={
           <>
-            Hardware that <span className="text-signal">performs</span>
+            Hardware that <span className="text-signal-light">performs</span>
           </>
         }
         lede="Enterprise-grade scanners, terminals, networking and surveillance from brands you already trust — deployed, configured and supported by our team."

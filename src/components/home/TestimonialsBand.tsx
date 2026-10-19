@@ -24,7 +24,7 @@ export function TestimonialsBand() {
             align="center"
             title={
               <>
-                Teams that <span className="text-signal">moved</span> with us
+                Teams that <span className="text-signal-light">moved</span> with us
               </>
             }
           />
@@ -39,7 +39,7 @@ export function TestimonialsBand() {
               className="w-[340px] shrink-0 rounded-2xl border border-white/10 bg-panel/60 p-7 sm:w-[420px]"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-signal/15 font-display text-sm text-signal">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-signal/15 font-display text-sm text-signal-light">
                   {initials(testimonial.name)}
                 </span>
                 <figcaption>

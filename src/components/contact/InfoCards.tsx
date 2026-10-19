@@ -52,7 +52,7 @@ export function InfoCards() {
       {items.map((item) => {
         const content = (
           <>
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-signal/10 text-signal">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-signal/10 text-signal-light">
               <svg
                 viewBox="0 0 24 24"
                 width="18"

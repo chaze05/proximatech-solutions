@@ -39,7 +39,7 @@ export function ProcessBand() {
             eyebrow="One-stop shop"
             title={
               <>
-                From first call to <span className="text-signal">go-live</span>
+                From first call to <span className="text-signal-light">go-live</span>
               </>
             }
             lede="Contract & documentation, proofing & printing, installation, monitoring, maintenance and dismantling — handled by one team."
@@ -50,7 +50,7 @@ export function ProcessBand() {
           {steps.map((step, index) => (
             <Reveal key={step.num} delay={index * 70}>
               <div className="relative h-full rounded-2xl border border-white/10 bg-night p-6">
-                <span className="font-display text-3xl text-signal/70">
+                <span className="font-display text-3xl text-signal-light/70">
                   {step.num}
                 </span>
                 <h3 className="mt-4 font-display text-base uppercase tracking-wide">
@@ -62,7 +62,7 @@ export function ProcessBand() {
                 {index < steps.length - 1 ? (
                   <span
                     aria-hidden="true"
-                    className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-signal/40 lg:block"
+                    className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-signal-light/40 lg:block"
                   >
                     →
                   </span>

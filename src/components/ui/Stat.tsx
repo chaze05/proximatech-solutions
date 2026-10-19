@@ -69,7 +69,7 @@ export function Stat({ value, label, suffix = "" }: StatProps) {
     <div ref={ref}>
       <p className="font-display text-4xl text-ink sm:text-5xl">
         {display}
-        <span className="text-signal">{suffix}</span>
+        <span className="text-signal-light">{suffix}</span>
       </p>
       <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.22em] text-muted">
         {label}

@@ -18,7 +18,7 @@ export function ProductsPreview() {
               eyebrow="Hardware"
               title={
                 <>
-                  Hardware that <span className="text-signal">performs</span>
+                  Hardware that <span className="text-signal-light">performs</span>
                 </>
               }
               lede="Enterprise-grade scanners, terminals, networking and surveillance from brands you already trust."
@@ -57,7 +57,7 @@ export function ProductsPreview() {
                   <p className="mt-2 line-clamp-2 text-sm text-secondary">
                     {product.blurb}
                   </p>
-                  <span className="mt-auto pt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-signal">
+                  <span className="mt-auto pt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-signal-light">
                     {product.storeSlug ? "Shop now" : "Request quote"}
                   </span>
                 </div>

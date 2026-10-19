@@ -18,7 +18,7 @@ export function PageHero({ eyebrow, title, lede, crumb }: PageHeroProps) {
       />
       <div className="relative mx-auto w-full max-w-container px-5 pb-16 pt-32 sm:pb-20 sm:pt-36">
         <Breadcrumbs items={[{ label: crumb }]} />
-        <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.32em] text-signal">
+        <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.32em] text-signal-light">
           {eyebrow}
         </p>
         <h1 className="mt-4 max-w-4xl font-display text-4xl uppercase leading-[1.02] sm:text-6xl lg:text-7xl">

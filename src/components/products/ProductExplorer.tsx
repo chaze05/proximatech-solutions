@@ -17,6 +17,7 @@ export function ProductExplorer() {
 
   return (
     <div>
+      <h2 className="sr-only">All products</h2>
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap gap-2">
           <Chip active={category === null} onClick={() => setCategory(null)}>

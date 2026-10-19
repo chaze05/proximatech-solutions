@@ -69,7 +69,7 @@ export function Header() {
               href={item.href}
               className={`relative text-[13px] font-bold uppercase tracking-[0.12em] transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-signal after:transition-transform after:duration-300 hover:text-ink hover:after:scale-x-100 ${
                 pathname === item.href || pathname.startsWith(item.href + "/")
-                  ? "text-signal after:scale-x-100"
+                  ? "text-signal-light after:scale-x-100"
                   : "text-secondary"
               }`}
             >

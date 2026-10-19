@@ -71,7 +71,7 @@ export default async function StoreProductPage({ params }: PageProps) {
               <h1 className="mt-2 font-display text-3xl uppercase leading-[1.05] sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-4 font-display text-2xl text-signal">
+              <p className="mt-4 font-display text-2xl text-signal-light">
                 {formatPeso(product.price)}
               </p>
               <p className="mt-5 leading-relaxed text-secondary">
@@ -91,7 +91,7 @@ export default async function StoreProductPage({ params }: PageProps) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-signal"
+                      className="mt-0.5 shrink-0 text-signal-light"
                     >
                       <path d="m5 12 5 5L20 7" />
                     </svg>

@@ -50,7 +50,7 @@ export function StoreCard({ product }: { product: StoreProduct }) {
           <span className="font-display text-xl text-ink">
             {formatPeso(product.price)}
           </span>
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-signal">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-signal-light">
             View product
           </span>
         </div>

@@ -21,7 +21,7 @@ export function SectionHeader({
     <div
       className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}
     >
-      <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-signal">
+      <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-signal-light">
         {index ? <span className="text-muted">{index} —</span> : null}
         <span>{eyebrow}</span>
       </p>

@@ -18,7 +18,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            Solutions that <span className="text-signal">scale</span>
+            Solutions that <span className="text-signal-light">scale</span>
           </>
         }
         lede="Eight services, one accountable team — from RFID and barcode rollouts to fully custom platforms and the cabling underneath them."
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       <section className="py-24 text-center sm:py-32">
         <Reveal className="mx-auto max-w-container px-5">
           <h2 className="font-display text-3xl uppercase leading-[1.05] sm:text-5xl">
-            Not sure which solution <span className="text-signal">fits?</span>
+            Not sure which solution <span className="text-signal-light">fits?</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-secondary">
             Tell us how your team works today and we&apos;ll map the shortest

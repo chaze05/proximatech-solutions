@@ -15,7 +15,7 @@ export default function GalleryPage() {
         eyebrow="Gallery"
         title={
           <>
-            Inside <span className="text-signal">Proximatech</span>
+            Inside <span className="text-signal-light">Proximatech</span>
           </>
         }
         lede="The people, the work and the events behind the systems — moments from inside our team."

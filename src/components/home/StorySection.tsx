@@ -12,7 +12,7 @@ export function StorySection() {
             eyebrow="Our story"
             title={
               <>
-                Innovating workplace <span className="text-signal">solutions</span>
+                Innovating workplace <span className="text-signal-light">solutions</span>
               </>
             }
           />

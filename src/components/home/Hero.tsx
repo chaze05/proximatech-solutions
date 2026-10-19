@@ -17,13 +17,13 @@ export function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-container items-center gap-16 px-5 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-signal">
+          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-signal-light">
             Proximatech Solutions
           </p>
           <h1 className="mt-6 font-display text-[clamp(2.9rem,8vw,6rem)] uppercase leading-[0.98]">
             Securing Your
             <br />
-            <span className="text-signal">Future.</span>
+            <span className="text-signal-light">Future.</span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
             {SITE.description}
@@ -51,7 +51,6 @@ export function Hero() {
                 src="/images/products/product-1.avif"
                 alt=""
                 fill
-                priority
                 sizes="340px"
                 className="object-contain p-6"
               />

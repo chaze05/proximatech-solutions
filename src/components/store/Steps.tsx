@@ -13,7 +13,7 @@ export function Steps({ current }: { current: number }) {
                 state === "active"
                   ? "border-signal bg-signal text-white"
                   : state === "done"
-                    ? "border-signal/60 text-signal"
+                    ? "border-signal/60 text-signal-light"
                     : "border-white/15 text-muted"
               }`}
             >

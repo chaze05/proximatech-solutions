@@ -18,7 +18,7 @@ export default function EventsPage() {
         eyebrow="Events"
         title={
           <>
-            Where we <span className="text-signal">show up</span>
+            Where we <span className="text-signal-light">show up</span>
           </>
         }
         lede="Congresses, exhibits and launches — the moments where our registration and tracking systems meet the people who use them."

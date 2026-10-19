@@ -13,7 +13,7 @@ export function PartnerMarquee() {
           {partners.map((partner) => (
             <span
               key={partner}
-              className="font-display text-xl uppercase tracking-[0.18em] text-white/25 transition-colors hover:text-white/60"
+              className="font-display text-xl uppercase tracking-[0.18em] text-white/55 transition-colors hover:text-white/85"
             >
               {partner}
             </span>

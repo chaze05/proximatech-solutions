@@ -16,7 +16,7 @@ export default function StorePage() {
         eyebrow="Store"
         title={
           <>
-            Proximatech <span className="text-signal">Store</span>
+            Proximatech <span className="text-signal-light">Store</span>
           </>
         }
         lede="Order-ready hardware from our catalog. This is a working demo store — prices are illustrative and checkout is simulated."

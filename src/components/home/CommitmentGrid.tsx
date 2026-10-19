@@ -42,7 +42,7 @@ export function CommitmentGrid() {
             align="center"
             title={
               <>
-                Built on six <span className="text-signal">principles</span>
+                Built on six <span className="text-signal-light">principles</span>
               </>
             }
             lede="The values behind every system we design, deploy and support."
@@ -53,7 +53,7 @@ export function CommitmentGrid() {
           {VALUE_CARDS.map((value, index) => (
             <Reveal key={value.title} delay={index * 60}>
               <div className="group h-full rounded-2xl border border-white/10 bg-night p-7 transition-colors duration-300 hover:border-signal/40">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-signal/10 text-signal">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-signal/10 text-signal-light">
                   <svg
                     viewBox="0 0 24 24"
                     width="22"

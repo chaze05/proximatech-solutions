@@ -17,7 +17,7 @@ export function AddToCart({ product }: { product: StoreProduct }) {
           aria-label="Decrease quantity"
           onClick={() => setQty((current) => Math.max(1, current - 1))}
           disabled={soldOut}
-          className="flex h-11 w-11 items-center justify-center text-ink transition-colors hover:text-signal disabled:opacity-40"
+          className="flex h-11 w-11 items-center justify-center text-ink transition-colors hover:text-signal-light disabled:opacity-40"
         >
           −
         </button>
@@ -29,7 +29,7 @@ export function AddToCart({ product }: { product: StoreProduct }) {
           aria-label="Increase quantity"
           onClick={() => setQty((current) => current + 1)}
           disabled={soldOut}
-          className="flex h-11 w-11 items-center justify-center text-ink transition-colors hover:text-signal disabled:opacity-40"
+          className="flex h-11 w-11 items-center justify-center text-ink transition-colors hover:text-signal-light disabled:opacity-40"
         >
           +
         </button>

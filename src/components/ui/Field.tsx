@@ -40,7 +40,7 @@ export function Field({
         className="text-[11px] font-bold uppercase tracking-[0.16em] text-secondary"
       >
         {label}
-        {required ? <span className="text-signal"> *</span> : null}
+        {required ? <span className="text-signal-light"> *</span> : null}
       </label>
 
       {as === "textarea" ? (

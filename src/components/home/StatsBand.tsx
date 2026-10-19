@@ -14,7 +14,7 @@ export function StatsBand() {
           <Stat value="24/7" label="Support available" />
         </div>
         <div className="bg-night px-6 py-10 sm:px-10">
-          <Stat value={2} suffix=".0Ã—" label="Productivity lift" />
+          <Stat value={2} suffix=".0×" label="Productivity lift" />
         </div>
       </div>
     </section>

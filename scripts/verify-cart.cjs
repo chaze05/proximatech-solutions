@@ -53,7 +53,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     const dialog = document.querySelector('[role="dialog"][aria-label="Shopping cart"]');
     return {
       hasItem: dialog ? dialog.textContent.includes("Rugged Mobile Scanner") : false,
-      subtotal: dialog ? (dialog.textContent.match(/â‚±[\d,]+/) || [null])[0] : null,
+      subtotal: dialog ? (dialog.textContent.match(/\u20B1[\d,]+/) || [null])[0] : null,
     };
   });
   console.log("drawer:", JSON.stringify(inDrawer));

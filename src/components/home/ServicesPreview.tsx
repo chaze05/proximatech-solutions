@@ -18,10 +18,10 @@ export function ServicesPreview() {
               eyebrow="What we do"
               title={
                 <>
-                  Solutions that <span className="text-signal">scale</span>
+                  Solutions that <span className="text-signal-light">scale</span>
                 </>
               }
-              lede="RFID, barcode, asset tracking and custom software â€” designed, deployed and supported by one team."
+              lede="RFID, barcode, asset tracking and custom software — designed, deployed and supported by one team."
             />
           </Reveal>
           <Reveal delay={100}>
@@ -47,7 +47,7 @@ export function ServicesPreview() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-base via-base/20 to-transparent" />
-                  <span className="absolute left-4 top-4 font-display text-xs text-signal">
+                  <span className="absolute left-4 top-4 font-display text-xs text-signal-light">
                     {service.num}
                   </span>
                 </div>
@@ -56,10 +56,10 @@ export function ServicesPreview() {
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-secondary">{service.tagline}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-signal">
+                  <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-signal-light">
                     Explore
                     <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
-                      â†’
+                      →
                     </span>
                   </span>
                 </div>

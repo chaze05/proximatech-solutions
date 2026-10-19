@@ -110,7 +110,7 @@ export function CartDrawer() {
 
             {lines.length === 0 ? (
               <div className="flex flex-1 flex-col items-center justify-center gap-3 px-6 text-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-panel text-signal">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-panel text-signal-light">
                   <svg
                     viewBox="0 0 24 24"
                     width="22"

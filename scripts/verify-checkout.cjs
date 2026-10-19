@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer-core");
+﻿const puppeteer = require("puppeteer-core");
 
 const BASE = "http://localhost:3000";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -76,7 +76,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await clickText("Continue");
 
   const review = await page.evaluate(() => ({
-    masked: document.body.innerText.includes("•••• 1111"),
+    masked: document.body.innerText.includes("\u2022\u2022\u2022\u2022 1111"),
     onReview: Array.from(document.querySelectorAll("button")).some((b) => b.textContent.trim() === "Place demo order"),
   }));
   console.log("review:", JSON.stringify(review));
@@ -85,7 +85,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await sleep(1400);
 
   const confirmation = await page.evaluate(() => ({
-    confirmed: document.body.innerText.includes("Order confirmed."),
+    confirmed: document.body.innerText.toUpperCase().includes("ORDER CONFIRMED."),
     orderId: (document.body.innerText.match(/PX-[A-Z0-9]+/) || [null])[0],
     cartCleared: window.localStorage.getItem("proximatech.cart.v1"),
   }));
@@ -93,3 +93,4 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   await browser.close();
 })();
+

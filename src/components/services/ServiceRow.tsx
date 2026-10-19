@@ -21,14 +21,14 @@ export function ServiceRow({
             sizes="(min-width: 1024px) 560px, 100vw"
             className="object-cover"
           />
-          <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-night/70 px-3 py-1 font-display text-xs text-signal backdrop-blur">
+          <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-night/70 px-3 py-1 font-display text-xs text-signal-light backdrop-blur">
             {service.num}
           </span>
         </div>
       </Reveal>
 
       <Reveal delay={100} className={flip ? "lg:order-1" : ""}>
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-signal">
+        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-signal-light">
           Service {service.num}
         </p>
         <h2 className="mt-3 font-display text-3xl uppercase leading-[1.05] sm:text-4xl">
@@ -55,7 +55,7 @@ export function ServiceRow({
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
-                className="mt-0.5 shrink-0 text-signal"
+                className="mt-0.5 shrink-0 text-signal-light"
               >
                 <path d="m5 12 5 5L20 7" />
               </svg>

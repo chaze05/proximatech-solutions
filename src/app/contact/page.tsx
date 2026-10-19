@@ -18,7 +18,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title={
           <>
-            Let&apos;s build something <span className="text-signal">great</span>
+            Let&apos;s build something <span className="text-signal-light">great</span>
           </>
         }
         lede="Questions, a project in mind, or just exploring? Our team is ready to assist — usually within one business day."

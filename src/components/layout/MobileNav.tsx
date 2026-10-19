@@ -22,7 +22,7 @@ export function MobileNav({ open, onClose, pathname }: MobileNavProps) {
             href={item.href}
             onClick={onClose}
             className={`rounded-lg px-2 py-3 text-base font-semibold transition-colors ${
-              pathname === item.href ? "text-signal" : "text-ink hover:text-signal"
+              pathname === item.href ? "text-signal-light" : "text-ink hover:text-signal-light"
             }`}
           >
             {item.label}

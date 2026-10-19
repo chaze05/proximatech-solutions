@@ -15,7 +15,7 @@ export default function CheckoutPage() {
         eyebrow="Checkout"
         title={
           <>
-            Demo <span className="text-signal">checkout</span>
+            Demo <span className="text-signal-light">checkout</span>
           </>
         }
         lede="Walk through the order flow end to end. This is a demonstration — no real payment will be taken."

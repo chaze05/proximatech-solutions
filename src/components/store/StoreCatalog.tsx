@@ -23,6 +23,7 @@ export function StoreCatalog() {
 
   return (
     <div>
+      <h2 className="sr-only">Store products</h2>
       <div className="flex flex-wrap gap-2">
         <Chip active={category === null} onClick={() => setCategory(null)}>
           All

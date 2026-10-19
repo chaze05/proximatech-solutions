@@ -33,7 +33,7 @@ export function ProductCard({ product }: { product: CatalogProduct }) {
         <p className="mt-3 text-sm leading-relaxed text-secondary">
           {product.blurb}
         </p>
-        <span className="mt-auto pt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-signal">
+        <span className="mt-auto pt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-signal-light">
           {product.storeSlug ? "Shop now" : "Request a quote"}
           <span
             aria-hidden="true"
