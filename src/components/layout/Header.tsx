@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -38,8 +38,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
         scrolled
-          ? "border-white/10 bg-base/90 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.9)]"
-          : "border-white/5 bg-base/60"
+          ? "border-white/10 bg-night/90 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.9)]"
+          : "border-white/5 bg-night/60"
       }`}
     >
       <div

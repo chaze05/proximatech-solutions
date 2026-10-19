@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Archivo_Black, Manrope } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -20,7 +20,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://proximatechsolutions.com"),
-  title: "Proximatech Solutions — Securing Your Future",
+  title: "Proximatech Solutions â€” Securing Your Future",
   description:
     "Next-generation workplace productivity software, RFID, barcode and asset tracking solutions from Proximatech Solutions, Philippines.",
 };

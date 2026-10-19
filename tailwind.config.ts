@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+﻿import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -10,7 +10,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        base: "#08090C",
+        night: "#08090C",
         panel: "#10131A",
         elevated: "#161A23",
         ink: "#F5F7FA",
@@ -36,9 +36,15 @@ const config: Config = {
         marquee: {
           to: { transform: "translateX(-50%)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-16px)" },
+        },
       },
       animation: {
         marquee: "marquee 38s linear infinite",
+        float: "float 8s ease-in-out infinite",
+        "float-slow": "float 12s ease-in-out infinite reverse",
       },
     },
   },

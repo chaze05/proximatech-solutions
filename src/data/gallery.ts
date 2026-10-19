@@ -1,4 +1,4 @@
-export type GalleryCategory = "Team" | "Vision" | "Events";
+﻿export type GalleryCategory = "Team" | "Vision" | "Events";
 
 export type GalleryImage = {
   src: string;
@@ -29,32 +29,32 @@ export const GALLERY: GalleryImage[] = [
   },
   {
     src: "/images/gallery/team-1.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {
     src: "/images/gallery/team-2.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {
     src: "/images/gallery/team-3.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {
     src: "/images/gallery/team-4.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {
     src: "/images/gallery/team-5.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {
     src: "/images/gallery/team-6.jpg",
-    alt: "Proximatech team member at work",
+    alt: "Proximatech team hosting a registration event",
     category: "Team",
   },
   {

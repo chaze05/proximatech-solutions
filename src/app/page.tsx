@@ -1,22 +1,25 @@
-import { PageHero } from "@/components/ui/PageHero";
-import { SITE } from "@/data/site";
+import { Hero } from "@/components/home/Hero";
+import { StatsBand } from "@/components/home/StatsBand";
+import { PartnerMarquee } from "@/components/home/PartnerMarquee";
+import { StorySection } from "@/components/home/StorySection";
+import { ServicesPreview } from "@/components/home/ServicesPreview";
+import { ProductsPreview } from "@/components/home/ProductsPreview";
+import { CommitmentGrid } from "@/components/home/CommitmentGrid";
+import { TestimonialsBand } from "@/components/home/TestimonialsBand";
+import { CtaBand } from "@/components/home/CtaBand";
 
 export default function Home() {
   return (
     <>
-      <PageHero
-        eyebrow="Proximatech Solutions"
-        title={
-          <>
-            Securing Your <span className="text-signal">Future.</span>
-          </>
-        }
-        lede={SITE.description}
-        crumb="Home"
-      />
-      <div className="mx-auto w-full max-w-container px-5 py-24">
-        <p className="text-secondary">Home page sections land next.</p>
-      </div>
+      <Hero />
+      <StatsBand />
+      <PartnerMarquee />
+      <StorySection />
+      <ServicesPreview />
+      <ProductsPreview />
+      <CommitmentGrid />
+      <TestimonialsBand />
+      <CtaBand />
     </>
   );
 }

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { NAV } from "@/data/navigation";
@@ -14,7 +14,7 @@ export function MobileNav({ open, onClose, pathname }: MobileNavProps) {
   if (!open) return null;
 
   return (
-    <div className="border-t border-white/10 bg-base/95 backdrop-blur-xl lg:hidden">
+    <div className="border-t border-white/10 bg-night/95 backdrop-blur-xl lg:hidden">
       <nav aria-label="Mobile" className="mx-auto flex max-w-container flex-col px-5 py-4">
         {NAV.map((item) => (
           <Link
