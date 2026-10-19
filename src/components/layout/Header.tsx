@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
+import { CartButton } from "@/components/store/CartButton";
 import { MobileNav } from "./MobileNav";
 
 export function Header() {
@@ -78,26 +79,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/store"
-            aria-label="Store"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-secondary transition-colors duration-200 hover:border-signal/60 hover:text-ink"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="18"
-              height="18"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M6 7h12l1.2 12.2a1.8 1.8 0 0 1-1.8 1.8H6.6a1.8 1.8 0 0 1-1.8-1.8L6 7Z" />
-              <path d="M9 10V6a3 3 0 0 1 6 0v4" />
-            </svg>
-          </Link>
+          <CartButton />
 
           <div className="hidden sm:block">
             <Button href="/contact" className="!px-5 !py-2.5">

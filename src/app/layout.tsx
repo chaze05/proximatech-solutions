@@ -2,6 +2,8 @@
 import { Archivo_Black, Manrope } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CartProvider } from "@/components/store/CartProvider";
+import { CartDrawer } from "@/components/store/CartDrawer";
 import "./globals.css";
 
 const archivo = Archivo_Black({
@@ -37,11 +39,14 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Header />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

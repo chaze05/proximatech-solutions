@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getStoreProduct, STORE_PRODUCTS } from "@/data/store";
 import { formatPeso } from "@/lib/format";
 import { StoreCard } from "@/components/store/StoreCard";
+import { AddToCart } from "@/components/store/AddToCart";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -99,7 +100,9 @@ export default async function StoreProductPage({ params }: PageProps) {
                 ))}
               </dl>
 
-              <div className="mt-8">
+              <AddToCart product={product} />
+
+              <div className="mt-5">
                 <Link
                   href="/contact"
                   className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-ink transition-colors hover:border-signal/60"
