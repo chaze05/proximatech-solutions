@@ -86,3 +86,18 @@ test("payment validation", () => {
   assert.ok(validatePayment({ ...good, cvc: "12" }).cvc);
   assert.ok(validatePayment({ ...good, cardNumber: "1234" }).cardNumber);
 });
+
+import { validateCheckoutContact } from "../src/lib/validation.ts";
+
+test("checkout contact validation (subset)", () => {
+  assert.ok(validateCheckoutContact({ firstName: "", lastName: "R", email: "x", phone: "1" }).firstName);
+  assert.deepEqual(
+    validateCheckoutContact({
+      firstName: "Rani",
+      lastName: "Rubillos",
+      email: "rani@example.com",
+      phone: "+63 976 339 4297",
+    }),
+    {}
+  );
+});

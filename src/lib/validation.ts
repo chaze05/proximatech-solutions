@@ -21,6 +21,13 @@ export type PaymentInput = {
   cvc: string;
 };
 
+export type CheckoutContactInput = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+};
+
 type Errors<T> = Partial<Record<keyof T, string>>;
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -57,8 +64,27 @@ export function validateContact(input: ContactInput): Errors<ContactInput> {
   return errors;
 }
 
-export function validateShipping(input: ShippingInput): Errors<ShippingInput> {
-  const errors: Errors<ShippingInput> = {};
+export function validateCheckoutContact(
+  input: CheckoutContactInput
+): Errors<CheckoutContactInput> {
+  const errors: Errors<CheckoutContactInput> = {};
+
+  const first = tooShort(input.firstName, "First name");
+  if (first) errors.firstName = first;
+
+  const last = tooShort(input.lastName, "Last name");
+  if (last) errors.lastName = last;
+
+  if (!EMAIL.test(input.email.trim())) errors.email = "Enter a valid email.";
+
+  if (!PHONE.test(input.phone.replace(/[^\d+]/g, ""))) {
+    errors.phone = "Enter a valid PH phone number.";
+  }
+
+  return errors;
+}
+
+export function validateShipping(input: ShippingInput): Errors<ShippingInput> {  const errors: Errors<ShippingInput> = {};
 
   const address = tooShort(input.address, "Address", 4);
   if (address) errors.address = address;
