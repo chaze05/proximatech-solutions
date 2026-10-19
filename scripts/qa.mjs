@@ -23,12 +23,15 @@ const browser = await puppeteer.launch({
 
 for (const route of routes) {
   const page = await browser.newPage();
+  const allow404 = process.env.QA_ALLOW_404 === "1";
   const errors = [];
   page.on("pageerror", (e) =>
     errors.push("pageerror: " + e.message.slice(0, 160))
   );
   page.on("console", (m) => {
-    if (m.type() === "error") errors.push("console: " + m.text().slice(0, 160));
+    if (m.type() !== "error") return;
+    if (allow404 && m.text().includes("status of 404")) return;
+    errors.push("console: " + m.text().slice(0, 160));
   });
   page.on("requestfailed", (r) =>
     errors.push("reqfail: " + r.url().slice(0, 120))

@@ -22,9 +22,24 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://proximatechsolutions.com"),
-  title: "Proximatech Solutions â€” Securing Your Future",
+  title: "Proximatech Solutions — Securing Your Future",
   description:
     "Next-generation workplace productivity software, RFID, barcode and asset tracking solutions from Proximatech Solutions, Philippines.",
+  openGraph: {
+    title: "Proximatech Solutions — Securing Your Future",
+    description:
+      "RFID, barcode, asset tracking and custom software for modern workplaces.",
+    type: "website",
+    locale: "en_PH",
+    images: ["/images/logo.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Proximatech Solutions — Securing Your Future",
+    description:
+      "RFID, barcode, asset tracking and custom software for modern workplaces.",
+    images: ["/images/logo.png"],
+  },
 };
 
 export default function RootLayout({
