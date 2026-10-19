@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Manrope } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const archivo = Archivo_Black({
@@ -28,7 +30,19 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${archivo.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <a
+          href="#main"
+          className="sr-only rounded-full bg-signal px-4 py-2 text-sm font-bold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100]"
+        >
+          Skip to content
+        </a>
+        <Header />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

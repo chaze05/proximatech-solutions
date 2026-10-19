@@ -1,9 +1,22 @@
+import { PageHero } from "@/components/ui/PageHero";
+import { SITE } from "@/data/site";
+
 export default function Home() {
   return (
-    <main className="p-24">
-      <h1 className="font-display text-4xl sm:text-6xl">
-        SECURING YOUR FUTURE.
-      </h1>
-    </main>
+    <>
+      <PageHero
+        eyebrow="Proximatech Solutions"
+        title={
+          <>
+            Securing Your <span className="text-signal">Future.</span>
+          </>
+        }
+        lede={SITE.description}
+        crumb="Home"
+      />
+      <div className="mx-auto w-full max-w-container px-5 py-24">
+        <p className="text-secondary">Home page sections land next.</p>
+      </div>
+    </>
   );
 }

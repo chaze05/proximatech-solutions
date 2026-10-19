@@ -32,6 +32,14 @@ const config: Config = {
       screens: {
         xs: "480px",
       },
+      keyframes: {
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 38s linear infinite",
+      },
     },
   },
   plugins: [],
