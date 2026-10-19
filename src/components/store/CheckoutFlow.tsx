@@ -161,7 +161,7 @@ export function CheckoutFlow() {
       });
       clear();
       setPlacing(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "auto" });
     }, 900);
   };
 

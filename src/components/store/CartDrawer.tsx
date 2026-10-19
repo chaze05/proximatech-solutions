@@ -91,7 +91,7 @@ export function CartDrawer() {
                 type="button"
                 onClick={close}
                 aria-label="Close cart"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-ink transition-colors hover:border-signal/60"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ink transition-colors hover:border-signal/60"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -165,30 +165,30 @@ export function CartDrawer() {
                           <p className="text-xs text-muted">
                             {formatPeso(product.price)} each
                           </p>
-                          <div className="mt-2 flex items-center gap-2">
+                          <div className="mt-2 flex flex-wrap items-center gap-2">
                             <button
                               type="button"
                               aria-label={`Decrease quantity of ${product.name}`}
                               onClick={() => setQty(line.slug, line.qty - 1)}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-ink transition-colors hover:border-signal/60"
+                              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-ink transition-colors hover:border-signal/60"
                             >
                               −
                             </button>
-                            <span className="w-7 text-center text-sm" aria-live="polite">
+                            <span className="w-7 shrink-0 text-center text-sm" aria-live="polite">
                               {line.qty}
                             </span>
                             <button
                               type="button"
                               aria-label={`Increase quantity of ${product.name}`}
                               onClick={() => setQty(line.slug, line.qty + 1)}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-ink transition-colors hover:border-signal/60"
+                              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-ink transition-colors hover:border-signal/60"
                             >
                               +
                             </button>
                             <button
                               type="button"
                               onClick={() => remove(line.slug)}
-                              className="ml-auto min-h-9 text-[10px] font-bold uppercase tracking-[0.14em] text-muted transition-colors hover:text-signal-hover"
+                              className="ml-auto min-h-11 shrink-0 text-[10px] font-bold uppercase tracking-[0.14em] text-muted transition-colors hover:text-signal-hover"
                             >
                               Remove
                             </button>

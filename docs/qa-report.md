@@ -2,7 +2,7 @@
 
 - **Date**: 2026-10-19
 - **Build**: Next.js 15 production build (`npm run build`) — all routes static; store product pages SSG
-- **Unit tests**: `npm test` — 20/20 pass (cart math, storage parsing, formatting, validation, catalog filtering, data integrity, asset existence)
+- **Unit tests**: `npm test` — 28/28 pass (cart math, storage parsing, formatting, validation incl. expired cards, catalog filtering, data integrity, asset existence)
 - **Type check**: `tsc --noEmit` — clean
 
 ## Responsive matrix
@@ -34,8 +34,10 @@ One real issue was caught and fixed during QA: the contact info cards overflowed
 | Cart persists after reload (localStorage) | Pass |
 | Cart item subtotal (`₱18,900`) + Subtotal label | Pass |
 | Remove item → empty state | Pass |
+| Cart drawer at 320px (44px qty controls, no overflow) | Pass |
 | Checkout: empty contact blocked inline | Pass |
 | Checkout: invalid expiry (`13/28`) blocked | Pass |
+| Checkout: expired card (`09/20`) blocked — "Card has expired." | Pass |
 | Checkout: masked card (`•••• 1111`) on review | Pass |
 | Checkout: order `PX-…` confirmation, cart cleared | Pass |
 | Gallery: 11 images, Events filter = 1 | Pass |
@@ -48,25 +50,47 @@ One real issue was caught and fixed during QA: the contact info cards overflowed
 | `sitemap.xml` 13 URLs incl. store items | Pass |
 | `robots.txt` with sitemap reference | Pass |
 | Unique page titles on all main routes | Pass |
+| No dead placeholder links in footer | Pass |
+
+## Final review fix pass
+
+A fresh-context code review of the whole branch was run before shipping. Fixes applied and verified:
+
+- **Expired card validation** (Critical) — `validatePayment` now rejects past expiry dates with
+  "Card has expired."; unit test added (`payment rejects expired cards`), E2E verified.
+- **Invalid Tailwind tokens** — `border-white/12` (not in the default scale) replaced with
+  `border-white/10` across 7 components (borders now render the intended subtle steel).
+- **Missing scrim** — services preview gradient used the removed `base` color; now `from-night`.
+- **Reduced motion + hydration** — replaced `framer`'s reduced-motion hook with a
+  mount-safe `usePrefersReducedMotion` (no SSR/client mismatch), added global
+  `prefers-reduced-motion` CSS that disables transitions/animations and forces reveals
+  visible, removed forced smooth scroll, and SSR now renders final stat values.
+- **Cart drawer at 320px** — quantity controls fixed at 44×44, flex-wrap row, no overflow.
+- **Tap targets** — chips, cart button, menu toggle, drawer quantity controls and social links
+  raised to 44px minimum.
+- **Dead links** — removed placeholder `href="#"` social links; contact phone card now gives
+  each number its own `tel:` anchor.
+- **Performance** — Framer Motion is now lazy-loaded with the cart drawer (first opened), so
+  it no longer ships in any page's initial JS; Lighthouse mobile improved to 93/92.
 
 ## Lighthouse (headless Chrome, production build)
 
 | Page | Preset | Performance | Accessibility | Best practices | SEO | LCP | CLS |
 |---|---|---|---|---|---|---|---|
-| `/` | Mobile (simulated) | **92** | **100** | **100** | **100** | 3.1s | 0 |
-| `/store` | Mobile (simulated) | **95** | **100** | **100** | **100** | 2.8s | 0 |
+| `/` | Mobile (simulated) | **93** | **100** | **100** | **100** | 3.0s | 0 |
+| `/store` | Mobile (simulated) | **92** | **100** | **100** | **100** | 2.9s | 0 |
 | `/` | Desktop | **100** | **100** | **100** | **100** | 0.6s | 0.002 |
 | `/store` | Desktop | **100** | **100** | **100** | **100** | 0.6s | 0.001 |
 
 Notes:
-- First-load JS: 103–118KB gz (framer-motion + React + Next runtime).
+- First-load JS: 103KB shared + page chunks; Framer Motion loads on first cart open only.
 - Accessibility brought to 100 by lightening small red text on dark (`signal-light` token),
   fixing social-link accessible names, and adding listing headings.
 - CLS brought to 0 by switching display/body fonts to `display: "optional"` (no late swap;
-  fonts are preloaded and cached).
-- Mobile LCP is 2.8–3.1s under Lighthouse's simulated Slow 4G. Real-world broadband LCP is
-  ~0.5–0.7s (see desktop). Further mobile LCP work would need font/runtime streaming — noted
-  as a phase-2 nicety, not a blocker.
+  fonts are preloaded and cached), SSR-final stat values, and the global reduced-motion CSS.
+- Mobile LCP is 2.9–3.0s under Lighthouse's simulated Slow 4G. Real-world broadband LCP is
+  ~0.6s (see desktop). Further mobile LCP work would need font/runtime streaming — noted as a
+  phase-2 nicety, not a blocker.
 
 ## Known limitations (by design, phase 1)
 

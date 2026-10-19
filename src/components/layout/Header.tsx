@@ -93,7 +93,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-white/12 text-ink lg:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-white/10 text-ink lg:hidden"
           >
             <span
               className={`h-px w-4 bg-current transition-transform duration-300 ${

@@ -101,3 +101,14 @@ test("checkout contact validation (subset)", () => {
     {}
   );
 });
+
+test("payment rejects expired cards", () => {
+  const base = {
+    cardName: "Rani M Rubillos",
+    cardNumber: "4111 1111 1111 1111",
+    cvc: "123",
+  };
+  assert.ok(validatePayment({ ...base, expiry: "09/20" }).expiry);
+  assert.ok(validatePayment({ ...base, expiry: "01/25" }).expiry);
+  assert.deepEqual(validatePayment({ ...base, expiry: "09/29" }), {});
+});

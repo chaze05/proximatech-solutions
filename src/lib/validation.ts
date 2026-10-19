@@ -115,6 +115,8 @@ export function validatePayment(input: PaymentInput): Errors<PaymentInput> {
 
   if (!EXPIRY.test(input.expiry.trim())) {
     errors.expiry = "Use MM/YY with month 01–12.";
+  } else if (expiryIsPast(input.expiry.trim())) {
+    errors.expiry = "Card has expired.";
   }
 
   if (!CVC.test(input.cvc.trim())) {
@@ -122,4 +124,16 @@ export function validatePayment(input: PaymentInput): Errors<PaymentInput> {
   }
 
   return errors;
+}
+
+function expiryIsPast(value: string): boolean {
+  const match = /^(0[1-9]|1[0-2])\/(\d{2})$/.exec(value);
+  if (!match) return false;
+
+  const month = Number(match[1]);
+  const year = 2000 + Number(match[2]);
+  const now = new Date();
+
+  if (year < now.getFullYear()) return true;
+  return year === now.getFullYear() && month < now.getMonth() + 1;
 }

@@ -40,7 +40,7 @@ export function ProductExplorer() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search products…"
-            className="w-full rounded-full border border-white/12 bg-panel py-3 pl-11 pr-5 text-sm text-ink transition-colors placeholder:text-muted focus:border-signal focus:outline-none"
+            className="w-full rounded-full border border-white/10 bg-panel py-3 pl-11 pr-5 text-sm text-ink transition-colors placeholder:text-muted focus:border-signal focus:outline-none"
           />
           <svg
             viewBox="0 0 24 24"

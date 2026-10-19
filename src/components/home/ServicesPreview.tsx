@@ -46,7 +46,7 @@ export function ServicesPreview() {
                     sizes="(min-width: 1024px) 280px, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-base via-base/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night via-night/20 to-transparent" />
                   <span className="absolute left-4 top-4 font-display text-xs text-signal-light">
                     {service.num}
                   </span>

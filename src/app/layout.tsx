@@ -3,7 +3,7 @@ import { Archivo_Black, Manrope } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartProvider } from "@/components/store/CartProvider";
-import { CartDrawer } from "@/components/store/CartDrawer";
+import { CartDrawerMount } from "@/components/store/CartDrawerMount";
 import "./globals.css";
 
 const archivo = Archivo_Black({
@@ -60,7 +60,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <CartDrawer />
+          <CartDrawerMount />
         </CartProvider>
       </body>
     </html>

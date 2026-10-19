@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 type StatProps = {
   value: number | string;
@@ -11,11 +11,9 @@ type StatProps = {
 
 export function Stat({ value, label, suffix = "" }: StatProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const isNumeric = typeof value === "number";
-  const [display, setDisplay] = useState<string>(
-    isNumeric && !reduce ? "0" : String(value)
-  );
+  const [display, setDisplay] = useState<string>(String(value));
 
   useEffect(() => {
     if (!isNumeric || reduce) {
@@ -26,9 +24,9 @@ export function Stat({ value, label, suffix = "" }: StatProps) {
     const el = ref.current;
     if (!el) return;
 
-    let frame = 0;
     const target = value as number;
     const duration = 1400;
+    let frame = 0;
 
     const run = (start: number) => {
       const step = (ts: number) => {
@@ -44,6 +42,13 @@ export function Stat({ value, label, suffix = "" }: StatProps) {
       };
       frame = requestAnimationFrame(step);
     };
+
+    // Only animate when the stats begin below the fold; otherwise keep the
+    // final value from SSR visible without a reset flash.
+    const belowFold = el.getBoundingClientRect().top > window.innerHeight;
+    if (!belowFold) return;
+
+    setDisplay("0");
 
     const io = new IntersectionObserver(
       (entries) => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { useReducedMotion } from "framer-motion";
+import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 type RevealProps = {
   children: ReactNode;
@@ -11,7 +11,7 @@ type RevealProps = {
 
 export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`reveal transition-all duration-700 ease-out ${
         visible || reduce
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0"

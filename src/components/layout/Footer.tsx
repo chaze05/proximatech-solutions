@@ -41,27 +41,6 @@ export function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-secondary">
               {SITE.description}
             </p>
-            <div className="mt-6 flex gap-3">
-              {(["facebook", "linkedin", "youtube"] as const).map((network) => {
-                const label =
-                  network === "linkedin"
-                    ? "LinkedIn"
-                    : network === "youtube"
-                      ? "YouTube"
-                      : "Facebook";
-
-                return (
-                  <a
-                    key={network}
-                    href={SITE.socials[network]}
-                    aria-label={label}
-                    className="flex h-9 items-center justify-center rounded-full border border-white/12 px-3 text-[10px] font-bold uppercase tracking-wider text-secondary transition-colors hover:border-signal/60 hover:text-ink"
-                  >
-                    {label}
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {columns.map((column) => (

@@ -8,7 +8,8 @@ section, with a working **demo store** (catalog → cart → checkout → confir
 
 - **Next.js 15** (App Router) · React 19 · TypeScript (strict)
 - **Tailwind CSS 3.4** with a token-based design system
-- **Framer Motion** for the cart drawer (lazy, tree-shaken)
+- **Framer Motion** for the cart drawer — lazy-loaded on first cart open, so it ships in no
+  page's initial JavaScript
 - **next/font** — Archivo Black (display) + Manrope (body), self-hosted
 - Zero backend: all routes statically prerendered; cart persists in `localStorage`
 
@@ -35,8 +36,9 @@ This build is a **client-facing prototype**:
   is taken and prices are illustrative (PHP).
 - **Contact form** — validates properly and shows a success state; delivery is simulated.
   Phase 2 wires an email service/CRM.
-- **Content** — all copy and imagery sourced from the current WordPress site (assets copied
-  into `public/images/`). Stats and testimonial roles should be confirmed with the client.
+- **Content** — marketing copy and imagery were sourced from the current WordPress site (assets
+  copied into `public/images/`); store product names, specs and prices are illustrative demo
+  content. Stats and testimonial roles should be confirmed with the client.
 - **Domain** — the client's current site remains live; this deployment is for review.
 
 ## Scripts

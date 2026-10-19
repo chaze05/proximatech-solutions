@@ -15,7 +15,7 @@ type FieldProps = {
 };
 
 const inputClasses =
-  "w-full rounded-xl border border-white/12 bg-panel px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-colors duration-200 focus:border-signal focus:outline-none";
+  "w-full rounded-xl border border-white/10 bg-panel px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-colors duration-200 focus:border-signal focus:outline-none";
 
 export function Field({
   label,
