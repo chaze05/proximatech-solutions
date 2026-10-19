@@ -5,6 +5,23 @@
 - **Unit tests**: `npm test` — 28/28 pass (cart math, storage parsing, formatting, validation incl. expired cards, catalog filtering, data integrity, asset existence)
 - **Type check**: `tsc --noEmit` — clean
 
+## Motion update (Elev8-style hero + cursor)
+
+Added after the initial QA pass, on branch `feat/elev8-motion` (merged with a merge commit):
+
+- **Hero slider** — full-bleed 3-slide carousel, 500ms slide transition, 3s autoplay,
+  arrows + `01 / 03` counter, drag/swipe, pause on hover/focus, stops autoplay when
+  reduced-motion is preferred or the tab is hidden.
+- **Custom cursor** — Elev8 replica: 30px ring grows to 70px over interactive elements,
+  7px trailing dot, fine-pointer devices only, disabled for touch and reduced motion,
+  native cursor preserved.
+- **Headline word-stagger** — CSS-only reveal on load.
+- Verified live on Vercel: autoplay advances, hover pauses, arrows navigate, cursor follows
+  and grows on links, reduced-motion disables autoplay and hides the cursor, 0 console errors.
+- Lighthouse after the change (clean run): home **95** performance, store **98**;
+  accessibility/best-practices/SEO **100**; LCP 2.8s/2.4s; CLS 0.
+- No new dependencies (no Swiper/GSAP/three.js); animations use transform/opacity only.
+
 ## Responsive matrix
 
 Automated via `scripts/qa.mjs` against the production server. Every route checked at
@@ -77,8 +94,8 @@ A fresh-context code review of the whole branch was run before shipping. Fixes a
 
 | Page | Preset | Performance | Accessibility | Best practices | SEO | LCP | CLS |
 |---|---|---|---|---|---|---|---|
-| `/` | Mobile (simulated) | **93** | **100** | **100** | **100** | 3.0s | 0 |
-| `/store` | Mobile (simulated) | **92** | **100** | **100** | **100** | 2.9s | 0 |
+| `/` | Mobile (simulated) | **95** | **100** | **100** | **100** | 2.8s | 0 |
+| `/store` | Mobile (simulated) | **98** | **100** | **100** | **100** | 2.4s | 0 |
 | `/` | Desktop | **100** | **100** | **100** | **100** | 0.6s | 0.002 |
 | `/store` | Desktop | **100** | **100** | **100** | **100** | 0.6s | 0.001 |
 

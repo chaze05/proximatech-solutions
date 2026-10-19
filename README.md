@@ -10,6 +10,9 @@ section, with a working **demo store** (catalog → cart → checkout → confir
 - **Tailwind CSS 3.4** with a token-based design system
 - **Framer Motion** for the cart drawer — lazy-loaded on first cart open, so it ships in no
   page's initial JavaScript
+- **Elev8-style motion set** — full-bleed hero slider (autoplay + arrows + counter), a
+  two-ball custom cursor (30px → 70px over links), CSS word-stagger reveals and scroll
+  reveals — all transform/opacity based, no animation libraries
 - **next/font** — Archivo Black (display) + Manrope (body), self-hosted
 - Zero backend: all routes statically prerendered; cart persists in `localStorage`
 
